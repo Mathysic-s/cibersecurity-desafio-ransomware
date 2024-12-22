@@ -1,14 +1,13 @@
-import os
-import pyaes
+import os, pyaes
 
 ## abrir o arquivo criptografado
-file_name = "teste.txt.ransomwaretroll"
+file_name = "teste.txt.cryptable"
 file = open(file_name, "rb")
 file_data = file.read()
 file.close()
 
 ## chave para descriptografia
-key = b"testeransomwares"
+key = b"Cryptable@2024"
 aes = pyaes.AESModeOfOperationCTR(key)
 decrypt_data = aes.decrypt(file_data)
 
